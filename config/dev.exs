@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :ex_mon, ExMon.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "mac-natan",
+  password: "",
   database: "ex_mon_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
