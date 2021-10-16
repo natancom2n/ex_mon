@@ -4,10 +4,10 @@ defmodule ExMon.Trainer do
 
   @primary_key {:id, Ecto.UUID, autogenerate: true}
 
-  schema "trainers " do
+  schema "trainers" do
     field :name, :string
     field :password_hash, :string
-    field :password, :string, virtual: true #this no record in the bank
+    field :password, :string, virtual: true #this no record in the DB
     timestamps()
   end
 
@@ -17,7 +17,7 @@ defmodule ExMon.Trainer do
     %__MODULE__{}
       |> cast(params, @required_params)
       |> validate_required(@required_params)
-      |> validate_length(:password_hash, min: 6)
+      |> validate_length(:password, min: 6)
       |> put_pass_hash()
   end
 
